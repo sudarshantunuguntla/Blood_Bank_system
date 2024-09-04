@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - Blood Bank System</title>
+    <link rel="stylesheet" href="/static/css/comm.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{url_for('static',filename='logo.jpeg')}}" alt="Blood Bank Logo">
+        </div>
+        <h1>Blood Bank System</h1>
+        <div class="temp">
+            <a href="/dashboard">Dashboard</a>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn"><i class="fa fa-user"></i> Profile</button>
+            <div class="dropdown-content">
+                <a href="/profile">Profile</a>
+                <a href="/editprofile">Edit Profile</a>
+                <a href="/user/signout">Log Out</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="post-request-section">
+            <h2>Post Blood Request</h2>
+            <form action="/submit_request2" method="POST">
+                <label for="patient_name">Patient Name:</label>
+                <input type="text" id="patient_name" name="patient_name" required>
+
+                <label for="phone_number">Phone Number:</label>
+                <input type="tel" id="phone_number" name="phone_number" required>
+
+                <label for="need_date">When You Need Blood (Date):</label>
+                <input type="date" id="need_date" name="need_date" required>
+
+                <label for="purpose">Purpose or Details:</label>
+                <textarea id="purpose" name="purpose" rows="4" required></textarea>
+
+                <label for="blood_group">Blood Group Needed:</label>
+                <select id="blood_group" name="blood_group" required>
+                    <option value="">Select Blood Group</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+
+                <label for="units">Units Needed:</label>
+                <input type="number" id="units" name="units" required>
+
+                <input type="submit" value="Submit Request">
+            </form>
+        </section>
+    </main>
+</body>
+</html>

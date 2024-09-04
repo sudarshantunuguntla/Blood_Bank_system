@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - Blood Bank System</title>
+    <link rel="stylesheet" href="/static/css/user_profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{url_for('static',filename='logo.jpeg')}}" alt="Blood Bank Logo">
+        </div>
+        <h1>Blood Bank System</h1>
+        <div class="temp">
+            <a href="/dashboard">Dashboard</a>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn"><i class="fa fa-user"></i> Profile</button>
+            <div class="dropdown-content">
+                <a href="/profile">Profile</a>
+                <a href="/editprofile">Edit Profile</a>
+                <a href="/user/signout">Log Out</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="profile-section">
+            <h2>User Profile</h2>
+            <div class="profile-info">
+                <div class="profile-info-item">
+                    <strong>First Name:</strong> {{ session['user']['first_name'] }}
+                </div>
+                <div class="profile-info-item">
+                    <strong>Last Name:</strong> {{ session['user']['last_name'] }}
+                </div>
+                <div class="profile-info-item">
+                    <strong>Phone Number:</strong> {{ session['user']['phone_number'] }}
+                </div>
+                <div class="profile-info-item">
+                    <strong>Email:</strong> {{ session['user']['email'] }}
+                </div>
+                <div class="profile-info-item">
+                    <strong>Age:</strong> {{ session['user']['age'] }}
+                </div>
+                <div class="profile-info-item">
+                    <strong>Gender:</strong> {{ session['user']['gender'] }}
+                </div>
+                <div class="profile-info-item">
+                    <strong>Blood Group:</strong> {{ session['user']['bloodgroup'] }}
+                </div>
+                <div class="profile-info-item">
+                    <strong>Address:</strong> {{ session['user']['address'] }}
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/js/scripts.js"></script>
+</body>
+</html>

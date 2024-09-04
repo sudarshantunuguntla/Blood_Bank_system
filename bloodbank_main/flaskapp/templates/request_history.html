@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - Blood Bank System</title>
+    <link rel="stylesheet" href="/static/css/styles_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/a.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{url_for('static',filename='logo.jpeg')}}" alt="Blood Bank Logo">
+        </div>
+        <h1>Blood Bank System</h1>
+        <div class="temp">
+            <a href="/dashboard">Dashboard</a>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn"><i class="fa fa-user"></i> Profile</button>
+            <div class="dropdown-content">
+                <a href="/profile">Profile</a>
+                <a href="/editprofile">Edit Profile</a>
+                <a href="/user/signout">Log Out</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="request-history-section">
+            <h2>Request History</h2>
+            <br>
+            <!-- <div class="request-list">
+                {% for request in request_history %} -->
+                <!-- <div class="request-item">
+                    <div class="request-details">
+                        <div class="details-group">
+                            <p><strong>Hospital Name:</strong> {{ request.hospital_name }}</p>
+                            <p><strong>Phone Number:</strong> {{ request.hospital_phone }}</p>
+                            <p><strong>Address:</strong> {{ request.hospital_address }}</p>
+                        </div>
+                        <div class="details-group">
+                            <p><strong>Received Blood Type:</strong> {{ request.received_blood_type }}</p>
+                            <p><strong>Donated Blood Type:</strong> {{ request.donated_blood_type }}</p>
+                            <p><strong>Units:</strong> {{ request.units }}</p>
+                        </div>
+                        <div class="details-group">
+                            <p><strong>Request Date:</strong> {{ request.request_date }}</p>
+                            <p><strong>Status:</strong> {{ request.status }}</p>
+                            <p><strong>Reason:</strong> {{ request.reason }}</p>
+                        </div>
+                        <div class="details-group">
+                            <p><strong>Notes:</strong> {{ request.notes }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %} -->
+            <div class="request-list">
+                {% for request in request_history %}
+                <div class="request-item">
+                    <div class="request-details">
+                        <div class="details-group">
+                            <p><strong>Hospital Name:</strong> {{ request.hospital_name }}</p>
+                            <p><strong>Phone Number:</strong> {{ request.phone_number }}</p>
+                            <p><strong>Address:</strong> {{ request.address }}</p>
+                        </div>
+                        <div class="details-group">
+                            <p><strong>Received Blood Type:</strong> {{ request.received_blood_type }}</p>
+                            <p><strong>Donated Blood Type:</strong> {{ request.donated_bloodgroup }}</p>
+                            <p><strong>Units:</strong> {{ request.units }}</p>
+                        </div>
+                        <div class="details-group">
+                            <p><strong>Request Date:</strong> {{ request.datetime }}</p>
+                            <p><strong>Reason:</strong> {{ request.reason }}</p>
+                        </div>
+                        <div class="details-group">
+                            <p><strong>Status:</strong> {{ request.status }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

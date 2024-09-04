@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Header */
+header {
+    background-color: #c62828;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+header h1 {
+    font-size: 24px;
+}
+.logo img {
+    height: 30px;
+    padding-right: 10px;
+    
+}
+.temp a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    margin-left: 960px;
+    align-items: right;
+    position: relative;
+}
+.profile-dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    background-color: #c62828;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #b71c1c;
+    color: white;
+}
+
+
+/* Reset CSS */
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+} */
+
+/* Header */
+/* header {
+    background-color: #c62828;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 32px; 
+} */
+
+
+main {
+    padding: 20px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center; /* Center vertically */
+}
+
+.blood-community-section {
+    /* max-width: 1200px; */
+    text-align: justify; /* Justify text */
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 20px;
+}
+
+.blood-community-section h2 {
+    margin-bottom: 20px;
+    padding-left: 500px;
+    font-size: 35px; /* Increased font size */
+}
+
+.blood-community-section p {
+    
+    margin-bottom: 10px;
+    font-size: 23px; /* Increased font size */
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.buttons a {
+    background-color: rgb(202, 61, 61);
+    color: white;
+    padding: 15px 25px; /* Increased padding */
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 20px; /* Increased font size */
+}
+
+.buttons a:hover {
+    background-color: rgb(202, 61, 61);
+}
+/* Reset CSS */
+main {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center vertically */
+}
+
+
+.post-request-section {
+    max-width: 800px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.post-request-section h2 {
+    margin-bottom: 20px;
+}
+
+.post-request-section form {
+    text-align: left; /* Align form elements to the left */
+}
+
+.post-request-section label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.post-request-section input[type="text"],
+.post-request-section input[type="tel"],
+.post-request-section input[type="date"],
+.post-request-section select,
+.post-request-section textarea,
+.post-request-section input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.post-request-section input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.post-request-section input[type="submit"]:hover {
+    background-color: #45a049;
+}
+

@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    background-color: #c62828;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+/* Navigation */
+nav {
+    background-color: #ef5350;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Main Content */
+main {
+    display: flex;
+    padding: 20px;
+}
+
+.blood-group-section {
+    height: 77vh; /* Set height to fill the viewport */
+    overflow: hidden;
+    width: 500vh; /* Hide any overflowing content */
+}
+
+.blood-group-image-container {
+    display: flex; /* Use flexbox */
+    height: 100%; /* Fill the height of the section */
+}
+
+.blood-group-image-container img {
+    flex: 1; /* Each image takes equal space */
+    object-fit: contain; /* Maintain aspect ratio */
+    max-height: 100%; /* Ensure images fit within the container */
+    width: auto; /* Ensure images resize proportionally */
+}
+

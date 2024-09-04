@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Header */
+header {
+    background-color: #c62828;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 24px;
+}
+.logo img {
+    height: 30px;
+    padding-right: 10px;
+    
+}
+.temp a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    margin-left: 960px;
+    align-items: right;
+    position: relative;
+}
+.profile-dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    background-color: #c62828;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #b71c1c;
+    color: white;
+}
+main {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.request-history-section {
+    margin-top: 20px;
+}
+
+.request-list {
+    width: 100%;
+    max-width: 800px; /* Adjust max-width as needed */
+}
+
+.request-item {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.request-details {
+    padding: 20px;
+}
+
+.details-group {
+    margin-bottom: 20px;
+}
+
+.details-group p {
+    margin-bottom: 10px;
+}
+
+.requests-section {
+    max-width: 800px;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.requests-section h2 {
+    margin-bottom: 20px;
+}
+
+.request-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.request-card {
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.request-card h3 {
+    margin-bottom: 10px;
+}
+
+.request-card p {
+    margin-bottom: 5px;
+}
+
+.request-card form {
+    margin-top: 10px;
+}
+
+.request-card form button {
+    background-color: #c62828;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.request-card form button:hover {
+    background-color: #b71c1c;
+}

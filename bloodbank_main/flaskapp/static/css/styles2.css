@@ -1,0 +1,212 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    background-color: #c62828;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+/* Navigation */
+nav {
+    background-color: #ef5350;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Main Content */
+main {
+    display: flex;
+    padding: 20px;
+}
+
+/* Photos */
+.photos {
+    flex: 0 0 65%; /* Occupy 70% of the available width */
+    max-height: calc(100vh - 120px); /* Height is calculated as viewport height - header height and padding */
+    /* overflow: auto; Enable vertical scrolling if needed */
+}
+
+.photos img {
+    width: 100%; /* Ensures images occupy full width of their container */
+    height: 100%; /* Allows images to maintain aspect ratio */
+    max-width: 100%; /* Ensures images do not exceed the container width */
+    max-height: 100%; /* Ensures images do not exceed the container height */
+    object-fit: contain; /* Maintain aspect ratio while covering the container */
+}
+#nextBtn {
+    position: absolute;
+    top: 50%;
+    right: 35%;
+    transform: translateY(-50%);
+    padding: 10px;
+    background-color: #c62828;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* Login Form */
+.login-form {
+    flex: 0 0 30%; /* Occupy 30% of the available width */
+    max-height: calc(100vh - 120px); /*Height is calculated as viewport height - header height and padding*/
+    /* overflow: auto; Enable vertical scrolling if needed */
+    /* margin-left: 15px; */
+    padding-left: 20px; 
+
+}
+.card {
+    /* margin-top: 100px; */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.center{
+    padding-bottom: 10px;
+    text-align: center;
+
+}
+
+.field {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+.btn {
+    background-color: #c62828;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 10px;
+    /* padding-top: 5px; */
+    
+}
+
+.btn:hover {
+    background-color: #b71c1c;
+}
+
+.error {
+    color: #c62828;
+}
+
+.error--hidden {
+    display: none;
+}
+/* Hide elements */
+.hidden {
+    display: none;
+}
+
+
+/* about us */
+.about-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    margin-bottom: 10px;
+}
+
+.about-section h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.about-section ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.about-section ul li {
+    margin-bottom: 10px;
+}
+
+.team-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+}
+
+.team-list li {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.team-list li strong {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.team-list li a {
+    color: #c62828;
+}
+
+.blood-group-section {
+    height: 77vh; /* Set height to fill the viewport */
+    overflow: hidden;
+    width: 500vh; /* Hide any overflowing content */
+}
+
+.blood-group-image-container {
+    display: flex; /* Use flexbox */
+    height: 100%; /* Fill the height of the section */
+}
+
+.blood-group-image-container img {
+    flex: 1; /* Each image takes equal space */
+    object-fit: contain; /* Maintain aspect ratio */
+    max-height: 100%; /* Ensure images fit within the container */
+    width: auto; /* Ensure images resize proportionally */
+}

@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - Blood Bank System</title>
+    <link rel="stylesheet" href="/static/css/comm.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{url_for('static',filename='logo.jpeg')}}" alt="Blood Bank Logo">
+        </div>
+        <h1>Blood Bank System</h1>
+        <div class="temp">
+            <a href="/dashboard">Dashboard</a>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn"><i class="fa fa-user"></i> Profile</button>
+            <div class="dropdown-content">
+                <a href="/profile">Profile</a>
+                <a href="/editprofile">Edit Profile</a>
+                <a href="/user/signout">Log Out</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="blood-community-section">
+            <h2>Welcome to Blood Community</h2>
+            <br>
+            <p>The Blood Community is a vital platform that brings together donors, recipients, and volunteers to ensure a steady supply of blood for those in need. Here's why it's important:</p>
+            <br>
+            <ul>
+                <li><strong>Connect with Donors:</strong> Blood Community allows recipients to connect directly with willing donors, making the blood donation process faster and more efficient.</li>
+                <br>
+                <li><strong>Emergency Assistance:</strong> In times of emergencies, such as accidents or medical procedures, quick access to blood can be life-saving. Blood Community facilitates rapid responses to urgent requests.</li>
+                <br>
+                <li><strong>Community Support:</strong> By joining the Blood Community, individuals become part of a larger network dedicated to saving lives. Together, we can make a difference.</li>
+                <br>
+                <li><strong>Sharing Stories:</strong> The Blood Community isn't just about transactions; it's about sharing stories of hope, resilience, and compassion. Your journey can inspire others to contribute and spread awareness.</li>
+            </ul>
+            <br>
+            <br>
+            <p>Whether you're in need of blood or willing to donate, the Blood Community provides a safe and reliable space to connect with others and make a difference.</p>
+            <div class="buttons">
+                <a href="/post_request">Post a Request</a>
+                <a href="/my_request">My Request</a>
+                <a href="/view_request">View Other Requests</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

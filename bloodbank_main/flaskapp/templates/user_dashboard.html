@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - Blood Bank System</title>
+    <link rel="stylesheet" href="/static/css/styles_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{url_for('static',filename='logo.jpeg')}}" alt="Blood Bank Logo">
+        </div>
+        <h1>Blood Bank System</h1>
+        <div class="temp">
+            <a href="/dashboard">Dashboard</a>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn"><i class="fa fa-user"></i> Profile</button>
+            <div class="dropdown-content">
+                <a href="/profile">Profile</a>
+                <a href="/editprofile">Edit Profile</a>
+                <a href="/user/signout">Log Out</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="dashboard-section">
+            <h2>Welcome to Your Dashboard</h2>
+            <p>As a patient in our Blood Bank System, you have access to various features to manage your blood-related needs:</p>
+            <div class="button-container">
+                <a href="/tempest_hosp" class="request-link">Request Blood from Hospital</a>
+                <a href="/blood_community" class="request-link">Blood Community</a>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <h2>Statistics</h2>
+            <div class="stats-container">
+                <div class="stat">
+                    <h3>Total Donations</h3>
+                    <p> {{ session['user']['total_donations'] }} </p>
+                </div>
+                <div class="stat">
+                    <h3>Successful Requests</h3>
+                    <p>{{ session['user']['total_received']}}</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="history-section">
+            <h2>History</h2>
+            <p>View your history to track your blood-related activities:</p>
+            <div class="button-container">
+                <a href="/request_history" class="history-link">Hospital Receiving History</a>
+                <!-- <a href="#" class="history-link">Donation History</a> -->
+                <a href="/view_request" class="history-link">Blood Community Request</a>
+            </div>
+        </section>
+    </main>
+    <script src="/static/js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - Blood Bank System</title>
+    <link rel="stylesheet" href="/static/css/styles_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/a.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{url_for('static',filename='logo.jpeg')}}" alt="Blood Bank Logo">
+        </div>
+        <h1>Blood Bank System</h1>
+        <div class="temp">
+            <a href="/dashboard">Dashboard</a>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn"><i class="fa fa-user"></i> Profile</button>
+            <div class="dropdown-content">
+                <a href="/profile">Profile</a>
+                <a href="/editprofile">Edit Profile</a>
+                <a href="/user/signout">Log Out</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="hospital-details-section">
+            <h2>{{ hospital.name }}</h2>
+            <p><strong>Address:</strong> {{ hospital.address }}</p>
+            <p><strong>Phone:</strong> {{ hospital.phone }}</p>
+            <br>
+            {% for a,units in hospital.blood_types.items() %}
+                <p><strong>{{ a }} : </strong> {{ units }}</p>
+            {% endfor %}
+
+            <form action="{{ url_for('submit_request') }}" method="POST">
+                <input type="hidden" name="hospital_id" value="{{ hospital.id }}">
+                <input type="hidden" name="hospital_name" value="{{ hospital.name }}">
+                <label for="blood_type">Request Blood Type:</label>
+                <select name="blood_type" id="blood_type">
+                    <!-- {% for blood_type in hospital.blood_types.keys() %}
+                        <option value="{{ blood_type }}">{{ blood_type }}</option>
+                    {% endfor %} -->
+                    {% for blood_type, units in hospital.blood_types.items() %}
+                    {% if units > 0 %}
+                        <option value="{{ blood_type }}">{{ blood_type }}</option>
+                    {% endif %}
+                    {% endfor %}
+                </select>
+                <label for="bloodgroup">Donate Blood Type</label>
+                <select class="field" name="bloodgroup" required>
+                    <option value="">Select bloodgroup</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+                <label for="units">Units:</label>
+                <input type="number" name="units" id="units" min="1" required>
+                <label for="reason">Reason</label>
+                <input type="text" name="reason" id="reason">
+                <input type="submit" value="Submit Request">
+            </form>
+        </section>
+           
+    <script src="/static/js/a.js"></script>
+    <script src="/static/js/jquery.js"></script>
+</body>
+</html>

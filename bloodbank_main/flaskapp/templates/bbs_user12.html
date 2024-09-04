@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - Blood Bank System</title>
+    <link rel="stylesheet" href="/static/css/styles_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/a.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{url_for('static',filename='logo.jpeg')}}" alt="Blood Bank Logo">
+        </div>
+        <h1>Blood Bank System</h1>
+        <div class="temp">
+            <a href="/dashboard">Dashboard</a>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn"><i class="fa fa-user"></i> Profile</button>
+            <div class="dropdown-content">
+                <a href="/profile">Profile</a>
+                <a href="/editprofile">Edit Profile</a>
+                <a href="/user/signout">Log Out</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hospital-section">
+            <h2>Available Hospitals</h2>
+            <div class="hospital-list">
+                <div class="hospital">
+                    <h3>Hospital A</h3>
+                    <p><strong>Address:</strong> 123 Main Street, City, Country</p>
+                    <p><strong>Phone:</strong> +123 456 7890</p>
+                    <p><strong>Timings:</strong> Monday to Friday, 9:00 AM - 5:00 PM</p>
+                    <div class="blood-types">
+                        <span>A+</span> <button class="decrease">-</button> <span class="unit-count"> 10 </span> <button class="increase">+</button>
+                    </div>
+                    <button onclick="requestBlood('Hospital A')">Request Blood</button>
+                </div>
+                <div class="hospital">
+                    <h3>Hospital B</h3>
+                    <p><strong>Address:</strong> 456 Elm Street, City, Country</p>
+                    <p><strong>Phone:</strong> +456 789 0123</p>
+                    <p><strong>Timings:</strong> Monday to Friday, 8:00 AM - 6:00 PM</p>
+                    <div class="blood-types">
+                        <span>O+</span> <button class="decrease">-</button> <span class="unit-count">15</span> <button class="increase">+</button>
+                    </div>
+                    <button onclick="requestBlood('Hospital B')">Request Blood</button>
+                </div>
+                <!-- Add more hospitals as needed -->
+            </div>
+        </section>
+    </main>
+    
+    <script src="/static/js/a.js"></script>
+    <script src="/static/js/jquery.js"></script>
+</body>
+</html>

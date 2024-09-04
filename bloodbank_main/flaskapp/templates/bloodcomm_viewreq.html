@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - Blood Bank System</title>
+    <link rel="stylesheet" href="/static/css/comm2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{url_for('static',filename='logo.jpeg')}}" alt="Blood Bank Logo">
+        </div>
+        <h1>Blood Bank System</h1>
+        <div class="temp">
+            <a href="/dashboard">Dashboard</a>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn"><i class="fa fa-user"></i> Profile</button>
+            <div class="dropdown-content">
+                <a href="/profile">Profile</a>
+                <a href="/editprofile">Edit Profile</a>
+                <a href="/user/signout">Log Out</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="requests-section">
+            <h2>Blood Requests from Community</h2>
+            <div class="request-list">
+                {% for request in requests %}
+                <div class="request-card">
+                    <h3>Patient Name: {{ request.patient_name }}</h3>
+                    <p>Blood Group Needed: {{ request.blood_group }}</p>
+                    <p>Units Needed: {{ request.units }}</p>
+                    <p>Date Required: {{ request.need_date }}</p>
+                    <p>Phone Number: {{ request.phone_number }}</p>
+                    <p>Email : {{request.email}}</p>
+                    <p>Address: {{ request.purpose }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+</body>
+</html>

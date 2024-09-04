@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - Blood Bank System</title>
+    <link rel="stylesheet" href="/static/css/styles_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/a.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{url_for('static',filename='logo.jpeg')}}" alt="Blood Bank Logo">
+        </div>
+        <h1>Blood Bank System</h1>
+        <div class="temp">
+            <a href="/dashboard">Dashboard</a>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn"><i class="fa fa-user"></i> Profile</button>
+            <div class="dropdown-content">
+                <a href="/profile">Profile</a>
+                <a href="/editprofile">Edit Profile</a>
+                <a href="/user/signout">Log Out</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="hospital-section">
+            <h2>Available Hospitals</h2>
+            <div class="hospital-list">
+                <div class="hospital">
+                    {% for hospital in hospitals %}
+                    <div class="hospital-item">
+                        <a href="{{ url_for('hospital_details', hospital_id=hospital.id) }}" style="text-decoration:none;" color=black>
+                        <h3>{{ hospital.name }}</h3>
+                        <p><strong>Address:</strong> {{ hospital.address }}</p>
+                        <p><strong>Phone:</strong> {{ hospital.phone }}</p>
+                        <p><strong>Timings :</strong> {{ hospital.Timings }}</p>
+                        <ul>
+                            {% for blood_type, units_available in hospital.blood_types.items() %}
+                                {% if units_available > 0 %}
+                                    <li><strong>{{ blood_type }}</strong> - Units available: {{ units_available }}</li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="/static/js/a.js"></script>
+    <script src="/static/js/jquery.js"></script>
+</body>
+</html>
